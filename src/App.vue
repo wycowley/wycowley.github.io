@@ -20,6 +20,7 @@ import About from "./about/About.vue";
 body {
     font-family: "Poppins", sans-serif;
     --accent: rgb(77, 150, 199);
+    --main-bg: rgb(255, 255, 255);
 }
 
 ::selection {
