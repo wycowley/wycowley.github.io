@@ -1,24 +1,17 @@
 <script setup>
-import { onMounted, onBeforeUnmount, ref } from "vue";
-
+import { onMounted, onBeforeUnmount, ref, watch } from "vue";
+import { scroll } from "../Scroll.js";
 const atTop = ref(true);
 
+watch(scroll, (newValue) => {
+    console.log("help");
+    if (newValue == 0) {
+        atTop.value = true;
+    } else if (atTop.value == true) {
+        atTop.value = false;
+    }
+});
 var scrollListener;
-onMounted(() => {
-    scrollListener = window.addEventListener("scroll", (event) => {
-        if (window.scrollY == 0) {
-            atTop.value = true;
-        }
-        if (atTop.value == true) {
-            if (window.scrollY != 0) {
-                atTop.value = false;
-            }
-        }
-    });
-});
-onBeforeUnmount(() => {
-    window.removeEventListener("scroll", scrollListener);
-});
 </script>
 <template>
     <div class="navbar" :style="{ backgroundColor: atTop ? 'rgb(255,255,255)' : '' }">
