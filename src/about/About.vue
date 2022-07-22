@@ -10,7 +10,7 @@ import { watch } from "vue";
         <div class="dividing-bar"></div>
 
         <div class="full-slide first">
-            <div class="text-welcome">
+            <div class="text">
                 <h1>Welcome</h1>
                 <p>
                     My name is Wyatt Cowley, and I'm an incoming freshman to BYU planning to study Computer Science. Thanks for stopping by!
@@ -73,19 +73,14 @@ import { watch } from "vue";
     position: absolute;
     top: 0;
 }
-.text-welcome > h1 {
-    font-size: 3.5rem;
-}
-.text-welcome > p {
-    font-size: 2rem;
-}
+
 .text > h1 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     margin: 0;
     margin-bottom: 0.5rem;
 }
 .text > p {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin: 0;
 }
 .text a {
@@ -95,22 +90,22 @@ import { watch } from "vue";
     padding-top: 15vh;
 }
 .full-slide {
-    width: 80%;
-    margin-left: 10%;
-    height: 70vh;
+    width: 90%;
+    margin-left: 5%;
+    height: 75vh;
 
     display: flex;
     flex-direction: row;
 }
 .full-slide > div {
-    width: 40%;
-    margin: 5%;
+    width: 45%;
+    margin: 2.5%;
     height: 100%;
 }
 .about-slideshow {
     width: 90%;
     height: 100%;
-    box-shadow: 0 8px 30px rgb(0, 0, 0, 0.2);
+    box-shadow: var(--main-shadow);
     border-radius: 2px;
     transition: all 0.2s;
 }

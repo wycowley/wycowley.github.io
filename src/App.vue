@@ -6,12 +6,14 @@ import Slideshow from "./slideshow/Slideshow.vue";
 import Navbar from "./navbar/Navbar.vue";
 import Home from "./home/Home.vue";
 import About from "./about/About.vue";
+import Projects from "./projects/Projects.vue";
 </script>
 <template>
     <div>
         <Navbar></Navbar>
         <Home></Home>
         <About></About>
+        <Projects></Projects>
     </div>
 </template>
 
@@ -21,6 +23,8 @@ body {
     font-family: "Poppins", sans-serif;
     --accent: rgb(77, 150, 199);
     --main-bg: rgb(255, 255, 255);
+
+    --main-shadow: 0 8px 30px rgb(0, 0, 0, 0.2);
 }
 
 ::selection {
