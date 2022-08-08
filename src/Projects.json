@@ -1,0 +1,33 @@
+[
+    {
+        "name": "Sudoku Solver",
+        "description": "I created this in 10th grade with Java.  It solves sudokus and allows for easy input of new puzzles.",
+        "link": "https://github.com/wycowley/SudokuSolver",
+        "date": "March 2020"
+    },
+
+    {
+        "name": "Template Manager",
+        "description": "Create, Edit, Monitor, and Share code templates - all at the touch of a button!  I created it individually for MVHacks 4.5 and won 3rd best overall hack.",
+        "link": "https://www.wyattcowley.com/template-manager/#/dashboard",
+        "date": "November 2021"
+    },
+    {
+        "name": "Music Portfolio",
+        "description": "I created this portfolio to showcase my piano progression over the years.  I used Vue and the Youtube iFrame API to build it.",
+        "link": "https://www.wyattcowley.com/music/",
+        "date": "Feb 2022"
+    },
+    {
+        "name": "Multiplayer Tetris",
+        "description": "This is my Advanced CS final project, meant to utilize multithreading and networking.  I built multiplayer tetris similar to Nintendo's tetris99.",
+        "link": "https://github.com/wycowley/adv-cs-final",
+        "date": "May 2022"
+    },
+    {
+        "name": "Resume",
+        "description": "My resume (may be out of date), where you can find some more of my accomplishments.",
+        "link": "resume.pdf",
+        "date": ""
+    }
+]

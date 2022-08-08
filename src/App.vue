@@ -7,6 +7,7 @@ import Navbar from "./navbar/Navbar.vue";
 import Home from "./home/Home.vue";
 import About from "./about/About.vue";
 import Projects from "./projects/Projects.vue";
+import Contact from "./contact/Contact.vue";
 </script>
 <template>
     <div>
@@ -14,6 +15,7 @@ import Projects from "./projects/Projects.vue";
         <Home></Home>
         <About></About>
         <Projects></Projects>
+        <Contact></Contact>
     </div>
 </template>
 
@@ -22,7 +24,10 @@ import Projects from "./projects/Projects.vue";
 body {
     font-family: "Poppins", sans-serif;
     --accent: rgb(77, 150, 199);
+    --accent-numbers: 77, 150, 199;
     --main-bg: rgb(255, 255, 255);
+    --second-bg: rgb(247, 251, 255);
+    --third-bg: rgb(225, 225, 225);
 
     --main-shadow: 0 8px 30px rgb(0, 0, 0, 0.2);
 }

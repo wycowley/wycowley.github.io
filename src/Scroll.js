@@ -5,6 +5,5 @@ document.addEventListener(
     "scroll",
     _throttle(function () {
         scroll.value = window.scrollY;
-        console.log(scroll.value);
     }, 30)
 );

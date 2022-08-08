@@ -4,22 +4,20 @@ import { scroll } from "../Scroll.js";
 const atTop = ref(true);
 
 watch(scroll, (newValue) => {
-    console.log("help");
     if (newValue == 0) {
         atTop.value = true;
     } else if (atTop.value == true) {
         atTop.value = false;
     }
 });
-var scrollListener;
 </script>
 <template>
     <div class="navbar" :style="{ backgroundColor: atTop ? 'rgb(255,255,255)' : '' }">
         <img src="main_logo.gif" />
-        <a><b>Wyatt Cowley</b></a>
-        <a>About Me</a>
-        <a>Projects</a>
-        <a>Contact</a>
+        <a href="#home"><b>Wyatt Cowley</b></a>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
     </div>
 </template>
 <style scoped>
@@ -53,6 +51,9 @@ var scrollListener;
     border-radius: 0.5rem;
 
     transition: all 0.25s;
+
+    text-decoration: none;
+    color: black;
     /* margin: 0 1rem; */
 }
 .navbar > a:hover {

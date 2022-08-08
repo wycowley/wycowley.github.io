@@ -11,10 +11,11 @@ onMounted(() => {
 });
 </script>
 <template>
+    <a id="home"></a>
     <div class="home">
         <div :style="{ transform: slideIn ? 'translateX(-100%)' : '' }">
-            <Slideshow :image-urls="['portrait.webp', 'yukon.webp', 'familyHonduras.webp']"></Slideshow>
-            <div class="cut-off-triangle"></div>
+            <Slideshow :image-urls="['yukon2.jpg', 'yukon.webp', 'familyHonduras.webp']"></Slideshow>
+            <svg class="cut-off-triangle" viewBox="0 0 20 100" preserveAspectRatio="none"><path d="M20 0, L20 100, L0 100"></path></svg>
         </div>
         <div>
             <h1>Wyatt Cowley</h1>
@@ -57,10 +58,8 @@ onMounted(() => {
     margin: 0;
 }
 .cut-off-triangle {
-    width: 0;
-    height: 0;
-    border-left: 10rem solid transparent;
-    border-bottom: 100vh solid white;
+    width: 10rem;
+    height: 100vh;
     margin: auto 0;
     z-index: 2;
 
@@ -69,5 +68,7 @@ onMounted(() => {
     right: 0;
 
     pointer-events: none;
+
+    fill: var(--main-bg);
 }
 </style>

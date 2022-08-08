@@ -9,8 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mdi/font": "^7.0.96",
+    "@mdi/js": "^7.0.96",
+    "bootstrap-vue": "^2.22.0",
     "lodash": "^4.17.21",
-    "vue": "^3.2.37"
+    "vue": "^3.2.37",
+    "vue-material-design-icons": "^5.1.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.0.0",
