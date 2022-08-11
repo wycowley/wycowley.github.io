@@ -11,7 +11,7 @@ const emits = defineEmits({
 </script>
 <template>
     <div @click.stop>
-        <button v-for="index in totalIndexes" :key="index" @click.stop="$emit('slideChosen', index - 1)" :style="{ backgroundColor: shownIndex == index - 1 ? 'white' : '' }"></button>
+        <button v-for="index in totalIndexes" aria-label="slideshow button" :key="index" @click.stop="$emit('slideChosen', index - 1)" :style="{ backgroundColor: shownIndex == index - 1 ? 'white' : '' }"></button>
     </div>
 </template>
 <style scoped>

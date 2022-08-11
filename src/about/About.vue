@@ -25,13 +25,6 @@ import { mdiCogOutline } from "@mdi/js";
             </div>
         </div>
         <div class="full-slide">
-            <div class="slides">
-                <svg viewBox="0 0 24 24" class="svg-animation animation1" :style="{ top: '-4vw', left: '-4vw', filter: '', width: '17vw' }"><path d="M 0 0 L 24 0 L 24 24 L 0 24"></path></svg>
-                <svg viewBox="0 0 24 24" class="svg-animation animation2" :style="{ top: '3vw', left: '-8vw', width: '9vw', filter: 'hue-rotate(100deg) ' }"><path d="M 0 0 L 24 0 L 24 24 L 0 24"></path></svg>
-
-                <Slideshow class="about-slideshow" :image-urls="['piano2.webp', 'chess.webp', 'wakeboard.webp']"></Slideshow>
-            </div>
-
             <div class="text">
                 <h1>Work Experience</h1>
                 <p>
@@ -44,6 +37,12 @@ import { mdiCogOutline } from "@mdi/js";
                     <br />
                     I participated and led a couple of clubs in high school. I was the President of the Practical Skills Club, and was part of the CS and Business clubs on campus.
                 </p>
+            </div>
+            <div class="slides">
+                <svg viewBox="0 0 24 24" class="svg-animation animation1" :style="{ top: '-4vw', left: '-4vw', filter: '', width: '17vw' }"><path d="M 0 0 L 24 0 L 24 24 L 0 24"></path></svg>
+                <svg viewBox="0 0 24 24" class="svg-animation animation2" :style="{ top: '3vw', left: '-8vw', width: '9vw', filter: 'hue-rotate(100deg) ' }"><path d="M 0 0 L 24 0 L 24 24 L 0 24"></path></svg>
+
+                <Slideshow class="about-slideshow" :image-urls="['piano2.webp', 'chess.webp', 'wakeboard.webp']"></Slideshow>
             </div>
         </div>
         <div class="full-slide">
@@ -67,6 +66,33 @@ import { mdiCogOutline } from "@mdi/js";
     </div>
 </template>
 <style scoped>
+@media only screen and (max-width: 950px) {
+    .full-slide {
+        flex-direction: column-reverse !important;
+        height: auto !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+
+    .about-slideshow {
+        width: 100% !important;
+    }
+    .slides {
+        height: 75vh !important;
+        padding: 2.5% !important;
+        width: 95% !important;
+        margin: 0 !important;
+    }
+
+    .text {
+        width: 95% !important;
+        margin: 2.5% !important;
+        margin-top: 4rem !important;
+    }
+    .svg-animation {
+        overflow: clip !important;
+    }
+}
 .about {
     position: relative;
     display: flex;
@@ -131,6 +157,7 @@ import { mdiCogOutline } from "@mdi/js";
 }
 .text a {
     color: var(--accent);
+    filter: brightness(0.7);
 }
 .slides {
     position: relative;
@@ -145,6 +172,9 @@ import { mdiCogOutline } from "@mdi/js";
     display: flex;
     flex-direction: row;
     padding-top: 15vh;
+}
+.full-slide:nth-child(2) {
+    flex-direction: row-reverse;
 }
 .full-slide > div {
     width: 45%;

@@ -32,6 +32,17 @@ console.log(title.value);
     </div>
 </template>
 <style scoped>
+@media only screen and (max-width: 550px) {
+    .title-container > div > h2 {
+        font-size: 1.25rem !important;
+    }
+    .title-container > p {
+        display: none !important;
+    }
+    /* .title-container > div > svg {
+        height: 2rem !important;
+    } */
+}
 .container {
     position: relative;
     /* width: calc(100% - 5rem); */
@@ -58,12 +69,16 @@ console.log(title.value);
     align-items: center;
     justify-content: space-between;
 }
+.title-container > div {
+    overflow: clip;
+    text-overflow: clip;
+}
 .title-container > div > h2 {
     font-size: 1.5rem;
     font-weight: 400;
     margin: 0 0 0 1rem;
     user-select: none;
-    display: inline-block;
+    display: inline;
     line-height: 3rem;
 }
 .title-container > p {
@@ -78,7 +93,7 @@ console.log(title.value);
 .description-container a {
     color: var(--accent);
     filter: brightness(0.7);
-    text-decoration: none;
+    /* text-decoration: none; */
 }
 
 .slide-in-enter-from,

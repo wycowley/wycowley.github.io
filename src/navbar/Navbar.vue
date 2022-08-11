@@ -1,26 +1,62 @@
 <script setup>
 import { onMounted, onBeforeUnmount, ref, watch } from "vue";
 import { scroll } from "../Scroll.js";
-const atTop = ref(true);
+import { mdiDotsVertical } from "@mdi/js";
+const atTop = ref(window.innerHeight > 650);
+const mobile = ref(window.innerHeight > 650);
+const active = ref(false);
 
-watch(scroll, (newValue) => {
-    if (newValue == 0) {
+window.addEventListener("resize", () => {
+    if (!mobile.value && window.innerWidth < 650) {
+        console.log(window.innerWidth);
+        mobile.value = true;
         atTop.value = true;
-    } else if (atTop.value == true) {
+    } else if (mobile.value && window.innerWidth > 650) {
+        console.log(window.innerWidth);
+        mobile.value = false;
         atTop.value = false;
     }
 });
 </script>
 <template>
     <div class="navbar" :style="{ backgroundColor: atTop ? 'rgb(255,255,255)' : '' }">
-        <img src="main_logo.gif" />
-        <a href="#home"><b>Wyatt Cowley</b></a>
-        <a href="#about">About Me</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <img src="main_logo.gif" alt="logo" />
+        <button class="hamburger-button" v-if="mobile" @click="active = !active">
+            <svg viewBox="0 0 24 24"><path :d="mdiDotsVertical"></path></svg>
+        </button>
+        <TransitionGroup name="fade-in">
+            <a href="#home" v-if="!mobile || active"><b>Wyatt Cowley</b></a>
+            <a href="#about" v-if="!mobile || active">About Me</a>
+            <a href="#projects" v-if="!mobile || active">Projects</a>
+            <a href="#contact" v-if="!mobile || active">Contact</a>
+        </TransitionGroup>
     </div>
 </template>
 <style scoped>
+@media only screen and (max-width: 650px) {
+    .navbar {
+        justify-content: space-between;
+        flex-wrap: wrap !important;
+    }
+    .navbar > a {
+        width: 100% !important;
+        background-color: white !important;
+        border-radius: 0 !important;
+    }
+}
+.fade-in-enter-from,
+.fade-in-leave-to {
+    opacity: 0;
+}
+.fade-in-enter-active,
+.fade-in-leave-active {
+    transition: opacity 0.35s;
+}
+.fade-in-enter-to,
+.fade-in-leave-from {
+    opacity: 1;
+}
+
 .navbar {
     position: fixed;
     top: 0;
@@ -28,7 +64,9 @@ watch(scroll, (newValue) => {
 
     width: 100%;
     height: 4rem;
-    padding: 0.5rem;
+    /* padding: 0.5rem; */
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     /* background-color: rgb(255, 255, 255); */
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.5) 100%);
     backdrop-filter: blur(10px);
@@ -40,9 +78,21 @@ watch(scroll, (newValue) => {
 
     transition: background-color 0.5s;
 }
+.hamburger-button {
+    width: 3rem;
+    height: 3rem;
+    margin: 0.5rem;
+    border: none;
+    background-color: transparent;
+}
+.hamburger-button > svg {
+    height: 100%;
+    width: 100%;
+}
 .navbar > img {
     width: 3rem;
     height: 3rem;
+    margin: 0.5rem;
     margin-left: 1rem;
 }
 .navbar > a {

@@ -9,10 +9,18 @@ import { mdiEmail } from "@mdi/js";
     <div class="contact-container">
         <div class="contact-gradient"></div>
         <div class="icon-container">
-            <svg viewBox="0 0 24 24"><path :d="mdiGithub"></path></svg>
-            <svg viewBox="0 0 24 24"><path :d="mdiLinkedin"></path></svg>
-            <svg viewBox="0 0 24 24"><path :d="mdiEmail"></path></svg>
-            <svg viewBox="0 0 24 24"><path :d="mdiInstagram"></path></svg>
+            <a>
+                <svg viewBox="0 0 24 24"><path :d="mdiGithub"></path></svg>
+            </a>
+            <a>
+                <svg viewBox="0 0 24 24"><path :d="mdiLinkedin"></path></svg>
+            </a>
+            <a>
+                <svg viewBox="0 0 24 24"><path :d="mdiEmail"></path></svg>
+            </a>
+            <a>
+                <svg viewBox="0 0 24 24"><path :d="mdiInstagram"></path></svg>
+            </a>
         </div>
         <h1>Created by Wyatt Cowley using Vue.js</h1>
     </div>
@@ -32,25 +40,29 @@ import { mdiEmail } from "@mdi/js";
 .contact-container > h1 {
     font-size: 1rem;
     text-align: center;
-    padding: 2rem;
+    padding-top: 0rem;
+    padding-bottom: 2rem;
     margin: 0;
 }
 .icon-container {
-    width: 50%;
-    margin-left: 25%;
-    padding: 5% 0;
+    width: 95%;
+    padding: 5% 2.5%;
+    padding-bottom: 3%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
 }
-.icon-container > svg {
-    height: 5rem;
-    width: 5rem;
+.icon-container > a {
+    padding: 0 3%;
+}
+.icon-container > a > svg {
+    height: 4.5rem;
+    width: 4.5rem;
     cursor: pointer;
 
     transition: transform 0.25s ease;
 }
-.icon-container > svg:hover {
+.icon-container > a > svg:hover {
     transform: scale(110%);
 }
 </style>

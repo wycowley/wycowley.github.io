@@ -26,10 +26,13 @@ body {
     --accent: rgb(77, 150, 199);
     --accent-numbers: 77, 150, 199;
     --main-bg: rgb(255, 255, 255);
-    --second-bg: rgb(247, 251, 255);
+    --second-bg: rgb(234, 238, 241);
     --third-bg: rgb(225, 225, 225);
 
     --main-shadow: 0 8px 30px rgb(0, 0, 0, 0.2);
+
+    overflow-x: clip;
+    width: 100%;
 }
 
 ::selection {

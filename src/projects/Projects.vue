@@ -31,6 +31,19 @@ function handleClick(name) {
     </div>
 </template>
 <style scoped>
+@media only screen and (max-width: 1200px) {
+    .all-projects {
+        flex-direction: column !important;
+    }
+    .all-projects > div {
+        width: calc(100% - 2rem) !important;
+    }
+}
+@media only screen and (max-width: 550px) {
+    .project-container > h1 {
+        font-size: 3rem !important;
+    }
+}
 .project-gradient {
     width: 100%;
     height: 15vh;
