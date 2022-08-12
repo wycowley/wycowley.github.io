@@ -20,7 +20,7 @@ window.addEventListener("resize", () => {
 </script>
 <template>
     <div class="navbar" :style="{ backgroundColor: atTop ? 'rgb(255,255,255)' : '' }">
-        <img src="main_logo.gif" alt="logo" />
+        <img src="/main_logo.png" alt="logo" />
         <button class="hamburger-button" v-if="mobile" @click="active = !active">
             <svg viewBox="0 0 24 24"><path :d="mdiDotsVertical"></path></svg>
         </button>
