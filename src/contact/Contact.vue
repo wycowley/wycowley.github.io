@@ -9,16 +9,16 @@ import { mdiEmail } from "@mdi/js";
     <div class="contact-container">
         <div class="contact-gradient"></div>
         <div class="icon-container">
-            <a>
+            <a href="https://github.com/wycowley" target="_blank">
                 <svg viewBox="0 0 24 24"><path :d="mdiGithub"></path></svg>
             </a>
-            <a>
+            <a href="https://www.linkedin.com/in/wyatt-cowley-a93505239/" target="_blank">
                 <svg viewBox="0 0 24 24"><path :d="mdiLinkedin"></path></svg>
             </a>
-            <a>
+            <a href="mailto:wycowley@gmail.com" target="_blank">
                 <svg viewBox="0 0 24 24"><path :d="mdiEmail"></path></svg>
             </a>
-            <a>
+            <a href="https://www.instagram.com/wycowley/" target="_blank">
                 <svg viewBox="0 0 24 24"><path :d="mdiInstagram"></path></svg>
             </a>
         </div>

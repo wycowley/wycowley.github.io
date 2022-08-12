@@ -2,8 +2,8 @@
 import { onMounted, onBeforeUnmount, ref, watch } from "vue";
 import { scroll } from "../Scroll.js";
 import { mdiDotsVertical } from "@mdi/js";
-const atTop = ref(window.innerHeight > 650);
-const mobile = ref(window.innerHeight > 650);
+const atTop = ref(window.innerHeight < 650);
+const mobile = ref(window.innerHeight < 650);
 const active = ref(false);
 
 window.addEventListener("resize", () => {
