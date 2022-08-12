@@ -70,6 +70,8 @@ window.addEventListener("resize", () => {
     /* background-color: rgb(255, 255, 255); */
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.5) 100%);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
     box-shadow: 0 8px 30px rgb(0, 0, 0, 0.12);
 
     display: flex;

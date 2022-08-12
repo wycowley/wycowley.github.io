@@ -52,7 +52,7 @@ function handleClick(name) {
 }
 .project-container {
     width: 100%;
-    height: 115vh;
+    min-height: 115vh;
     background-color: var(--second-bg);
 }
 

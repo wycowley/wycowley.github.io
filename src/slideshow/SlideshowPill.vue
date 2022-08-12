@@ -21,6 +21,8 @@ div {
     background-color: rgba(224, 224, 224, 0.336);
     box-shadow: 0 8px 30px rgb(0 0 0 / 12%);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
     width: fit-content;
 
     z-index: 2;

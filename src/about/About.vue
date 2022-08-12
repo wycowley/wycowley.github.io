@@ -21,7 +21,7 @@ import { mdiCogOutline } from "@mdi/js";
                 <svg viewBox="0 0 24 24" class="svg-animation animation1" :style="{ top: '-4vw', right: '-4vw', filter: ' hue-rotate(100deg)' }"><path d="M 0 0 L 24 0 L 24 24 L 0 24"></path></svg>
                 <svg viewBox="0 0 24 24" class="svg-animation animation2" :style="{ top: '-6vw', right: '5vw', width: '10vw' }"><path d="M 0 0 L 24 0 L 24 24 L 0 24"></path></svg>
 
-                <Slideshow class="about-slideshow" :image-urls="['family.webp', 'halfzion.webp', 'star.webp']"></Slideshow>
+                <Slideshow class="about-slideshow" :image-urls="['cover.webp', 'family.webp', 'star.webp']"></Slideshow>
             </div>
         </div>
         <div class="full-slide">
@@ -105,6 +105,7 @@ import { mdiCogOutline } from "@mdi/js";
     fill: rgba(var(--accent-numbers), 0.5);
     transform: scale(100%);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 50%;
 }
 .animation1 {

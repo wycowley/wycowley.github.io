@@ -14,7 +14,7 @@ onMounted(() => {
     <a id="home"></a>
     <div class="home">
         <div :style="{ transform: slideIn ? 'translateX(-100%)' : '' }">
-            <Slideshow :image-urls="['yukon2.jpg', 'yukon.webp', 'familyHonduras.webp']"></Slideshow>
+            <Slideshow :image-urls="['yukon2.webp', 'yukon.webp', 'familyHonduras.webp']"></Slideshow>
             <svg class="cut-off-triangle" viewBox="0 0 20 100" preserveAspectRatio="none"><path d="M20 0, L20 100, L0 100"></path></svg>
         </div>
         <div>
@@ -56,6 +56,7 @@ onMounted(() => {
     .home > div:nth-child(2) > div {
         background-color: rgba(255, 255, 255, 0.2);
         backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         min-width: 50% !important;
         /* margin-top: 30%; */
         padding: 1rem;
