@@ -2,59 +2,46 @@
 import { onMounted, onBeforeUnmount, ref, watch } from "vue";
 import { scroll } from "../Scroll.js";
 import { mdiDotsVertical } from "@mdi/js";
-const atTop = ref(window.innerHeight < 650);
 const mobile = ref(window.innerHeight < 650);
 const active = ref(false);
 
+onMounted(() => {
+    mobile.value = window.innerWidth < 650;
+});
 window.addEventListener("resize", () => {
     if (!mobile.value && window.innerWidth < 650) {
         console.log(window.innerWidth);
         mobile.value = true;
-        atTop.value = true;
     } else if (mobile.value && window.innerWidth > 650) {
         console.log(window.innerWidth);
         mobile.value = false;
-        atTop.value = false;
     }
 });
 </script>
 <template>
-    <div class="navbar" :style="{ backgroundColor: atTop ? 'rgb(255,255,255)' : '' }">
+    <div :class="mobile ? 'navbar_mobile navbar' : 'navbar'">
         <img src="/main_logo.png" alt="logo" />
         <button class="hamburger-button" v-if="mobile" @click="active = !active">
             <svg viewBox="0 0 24 24"><path :d="mdiDotsVertical"></path></svg>
         </button>
-        <TransitionGroup name="fade-in">
-            <a href="#home" v-if="!mobile || active"><b>Wyatt Cowley</b></a>
-            <a href="#about" v-if="!mobile || active">About Me</a>
-            <a href="#projects" v-if="!mobile || active">Projects</a>
-            <a href="#contact" v-if="!mobile || active">Contact</a>
-        </TransitionGroup>
+        <a href="#home" v-if="!mobile || active"><b>Wyatt Cowley</b></a>
+        <a href="#about" v-if="!mobile || active">About Me</a>
+        <a href="#projects" v-if="!mobile || active">Projects</a>
+        <a href="#contact" v-if="!mobile || active">Contact</a>
     </div>
 </template>
 <style scoped>
 @media only screen and (max-width: 650px) {
-    .navbar {
-        justify-content: space-between;
-        flex-wrap: wrap !important;
-    }
-    .navbar > a {
-        width: 100% !important;
-        background-color: white !important;
-        border-radius: 0 !important;
-    }
 }
-.fade-in-enter-from,
-.fade-in-leave-to {
-    opacity: 0;
+.navbar_mobile {
+    justify-content: space-between;
+    flex-wrap: wrap !important;
+    background-color: white;
 }
-.fade-in-enter-active,
-.fade-in-leave-active {
-    transition: opacity 0.35s;
-}
-.fade-in-enter-to,
-.fade-in-leave-from {
-    opacity: 1;
+.navbar_mobile > a {
+    width: 100% !important;
+    background-color: white !important;
+    border-radius: 0 !important;
 }
 
 .navbar {

@@ -3,24 +3,36 @@ import { onMounted, ref } from "@vue/runtime-core";
 import Slideshow from "../slideshow/Slideshow.vue";
 
 const slideIn = ref(true);
+const mobile = ref(false);
 
 onMounted(() => {
+    mobile.value = window.innerWidth <= 950;
+    if (mobile.value) slideIn.value = false;
     window.setTimeout(() => {
-        slideIn.value = false;
+        if (!mobile.value) slideIn.value = false;
     }, 500);
+});
+
+window.addEventListener("resize", () => {
+    if (!mobile.value && window.innerWidth <= 950) {
+        mobile.value = true;
+    } else if (mobile.value && window.innerWidth > 950) {
+        mobile.value = false;
+    }
 });
 </script>
 <template>
     <a id="home"></a>
     <div class="home">
         <div :style="{ transform: slideIn ? 'translateX(-100%)' : '' }">
-            <Slideshow :image-urls="['yukon2.webp', 'yukon.webp', 'familyHonduras.webp']"></Slideshow>
+            <Slideshow :image-urls="['yukon2.webp', 'yukon.webp', 'familyHonduras.webp']" v-if="!mobile"></Slideshow>
+            <div v-else class="mobile-picture"></div>
             <svg class="cut-off-triangle" viewBox="0 0 20 100" preserveAspectRatio="none"><path d="M20 0, L20 100, L0 100"></path></svg>
         </div>
         <div>
             <div>
                 <h1>Wyatt Cowley</h1>
-                <h2>— Incoming CS student at BYU —</h2>
+                <h2>— CS student at BYU —</h2>
             </div>
         </div>
     </div>
@@ -36,11 +48,19 @@ onMounted(() => {
 }
 @media only screen and (max-width: 950px) {
     .home {
-        display: block !important;
         position: relative !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
     }
     .home > div:first-child {
-        width: 100% !important;
+        position: static !important;
+        max-width: 400px;
+        width: 80% !important;
+        box-shadow: var(--main-shadow);
+        height: auto !important;
+        aspect-ratio: 1/1 !important;
+        border-radius: 50%;
     }
     .home > div:nth-child(2) {
         position: absolute !important;
@@ -54,9 +74,6 @@ onMounted(() => {
         background-color: transparent !important;
     }
     .home > div:nth-child(2) > div {
-        background-color: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
         min-width: 50% !important;
         /* margin-top: 30%; */
         padding: 1rem;
@@ -69,7 +86,16 @@ onMounted(() => {
         /* right: 0re; */
     }
 }
-
+.mobile-picture {
+    width: 100%;
+    height: 100%;
+    background-image: url(yukon2.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    border-radius: 50%;
+}
 .home {
     display: flex;
     flex-direction: row;

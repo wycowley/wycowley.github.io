@@ -10,14 +10,13 @@ import { mdiCogOutline } from "@mdi/js";
             <div class="text">
                 <h1>Welcome</h1>
                 <p>
-                    My name is Wyatt Cowley, and I'm an incoming freshman to BYU planning to study Computer Science. Thanks for stopping by!
+                    My name is Wyatt Cowley, and I'm a CS student at BYU. I'm currently looking for internships in the Bay Area for this summer. Thanks for stopping by!
                     <br />
                     <br />
-                    In my family, I have two siblings, Cyrus and Tessa, my dog (Kody), and my two parents.
+                    I am adept at frontend languages and frameworks such as React, Vue, and Flutter. I also have experience with backend languages such as Python, Java, and C++.
                 </p>
             </div>
             <div class="slides">
-                <!-- <svg viewBox="0 0 100 100" class="svg-animation"><path d="M 40 30 L 10 10 L 30 40 L 0 50 L 30 60 L 10 90 L 40 70 L 50 100 L 60 70 L 90 90 L 70 60 L 100 50 L 70 40 L 90 10 L 60 30 L 50 0" /></svg> -->
                 <svg viewBox="0 0 24 24" class="svg-animation animation1" :style="{ top: '-4vw', right: '-4vw', filter: ' hue-rotate(100deg)' }"><path d="M 0 0 L 24 0 L 24 24 L 0 24"></path></svg>
                 <svg viewBox="0 0 24 24" class="svg-animation animation2" :style="{ top: '-6vw', right: '5vw', width: '10vw' }"><path d="M 0 0 L 24 0 L 24 24 L 0 24"></path></svg>
 
@@ -28,14 +27,17 @@ import { mdiCogOutline } from "@mdi/js";
             <div class="text">
                 <h1>Work Experience</h1>
                 <p>
-                    I work at
-                    <a href="https://www.peeryacademy.com/" className="link" target="_blank" rel="noopener"> Peery Piano Academy</a> as one of their Lead Guides, teaching piano to 5+ students. I have played piano for over ten years and have performed pieces such as Sonate Pathetique and Liebestraum.
-                    Check out <a href="https://wyattcowley.com/music/" className="link" target="_blank" rel="noopener"> my portfolio here</a>!<br />
-                    <br />
-                    During the summer, I lifeguard and teach swim lessons at my local pool.
+                    This past year, I worked as a Research Assistant in a lab at BYU. I worked with other students to develop a full-stack application in preparation for training AIs to navigate a virtual social environment.
                     <br />
                     <br />
-                    I participated and led a couple of clubs in high school. I was the President of the Practical Skills Club, and was part of the CS and Business clubs on campus.
+                    In high school I worked at
+                    <a href="https://www.peeryacademy.com/" className="link" target="_blank" rel="noopener"> Peery Piano Academy</a> as one of their Lead Guides, teaching piano to 5+ students. Check out
+                    <a href="https://wyattcowley.com/music/" className="link" target="_blank" rel="noopener"> my personal music portfolio here</a>!<br />
+                    <br />
+                    I also lifeguarded and taught swim lessons at my local city pool.
+                    <br />
+                    <br />
+                    At Mountain View High School, I was the President of the Practical Skills Club, and was part of the CS and Business clubs.
                 </p>
             </div>
             <div class="slides">
@@ -49,11 +51,10 @@ import { mdiCogOutline } from "@mdi/js";
             <div class="text">
                 <h1>Interests</h1>
                 <p>
-                    At school I play Water Polo and Swimming, and have played for all 4 years, on varsity my Junior and Senior years. I am Varsity Swim Captain this year.
+                    In my free time, I love to read epic fantasy, spend time in the outdoors, and play Minecraft bedwars with my friends. I love going on adventures: such as scaling Mt. Shasta or scuba diving in Honduras.
                     <br />
-                    <br />I am a member of the Church of Jesus Christ of Latter Day Saints, and attend weekly devotionals and activities with my church and youth congregation. I am also a Eagle Scout. <br />
                     <br />
-                    In my free time, I love to read epic fantasy, spend time in the outdoors, and play Minecraft bedwars with my friends. I love going on adventures with the communities I'm a part of: such as scaling Mt. Shasta or scuba diving in Honduras.
+                    I am a member of the Church of Jesus Christ of Latter Day Saints, and attend weekly devotionals and activities with my church and youth congregation.<br />
                 </p>
             </div>
             <div class="slides">
@@ -90,7 +91,7 @@ import { mdiCogOutline } from "@mdi/js";
         margin-top: 4rem !important;
     }
     .svg-animation {
-        overflow: clip !important;
+        display: none !important;
     }
 }
 .about {
