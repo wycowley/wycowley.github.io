@@ -21,13 +21,13 @@ window.addEventListener("resize", () => {
 <template>
     <div :class="mobile ? 'navbar_mobile navbar' : 'navbar'">
         <img src="/main_logo.png" alt="logo" />
-        <button class="hamburger-button" v-if="mobile" @click="active = !active">
+        <!-- <button class="hamburger-button" v-if="mobile" @click="active = !active">
             <svg viewBox="0 0 24 24"><path :d="mdiDotsVertical"></path></svg>
-        </button>
-        <a href="#home" v-if="!mobile || active"><b>Wyatt Cowley</b></a>
-        <a href="#about" v-if="!mobile || active">About Me</a>
+        </button> -->
+        <a v-if="!mobile || active"><b>Wyatt Cowley</b></a>
+        <!-- <a href="#about" v-if="!mobile || active">About Me</a>
         <a href="#projects" v-if="!mobile || active">Projects</a>
-        <a href="#contact" v-if="!mobile || active">Contact</a>
+        <a href="#contact" v-if="!mobile || active">Contact</a> -->
     </div>
 </template>
 <style scoped>
@@ -55,7 +55,7 @@ window.addEventListener("resize", () => {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     /* background-color: rgb(255, 255, 255); */
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.5) 100%);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 100%);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 

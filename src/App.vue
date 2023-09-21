@@ -8,14 +8,18 @@ import Home from "./home/Home.vue";
 import About from "./about/About.vue";
 import Projects from "./projects/Projects.vue";
 import Contact from "./contact/Contact.vue";
+import Missionary from "./missionary/Missionary.vue";
+import Representation from "./missionary/Representation.vue";
 </script>
 <template>
     <div>
         <Navbar></Navbar>
         <Home></Home>
-        <About></About>
+        <Missionary></Missionary>
+        <Representation></Representation>
+        <!-- <About></About>
         <Projects></Projects>
-        <Contact></Contact>
+        <Contact></Contact> -->
     </div>
 </template>
 

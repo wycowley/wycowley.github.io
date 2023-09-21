@@ -13,6 +13,7 @@
     "@mdi/js": "^7.0.96",
     "bootstrap-vue": "^2.22.0",
     "lodash": "^4.17.21",
+    "matter-js": "^0.19.0",
     "vue": "^3.2.37",
     "vue-material-design-icons": "^5.1.2"
   },
